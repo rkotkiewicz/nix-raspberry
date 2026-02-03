@@ -10,9 +10,6 @@
   outputs = { self, nixpkgs, hardware, ... }@inputs: {
     nixosConfigurations = {
       "malina" = nixpkgs.lib.nixosSystem {
-
-        system = "aarch64-linux";
-
         modules = [
           ./configuration.nix
           hardware.nixosModules.raspberry-pi-3
