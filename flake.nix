@@ -13,6 +13,8 @@
         modules = [
           ./configuration.nix
           hardware.nixosModules.raspberry-pi-3
+
+          ./home-assistant.nix
         ];
       };
     };
