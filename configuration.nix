@@ -50,9 +50,7 @@
   environment.systemPackages = with pkgs; [
     wget
     vim
-#    git
-#    package-manager
-  #  home-assistant
+    git
   ];
   
 #  services.home-assistant = {
