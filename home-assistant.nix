@@ -10,6 +10,7 @@
     ];
     config = {
       default_config = {};
+      mqtt = {};
     };
   };
 
