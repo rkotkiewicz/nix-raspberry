@@ -10,7 +10,9 @@
     ];
     config = {
       default_config = {};
-      mqtt = {};
+      mqtt = {
+        server = "mqtt://localhost:1883";
+      };
     };
   };
 
