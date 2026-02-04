@@ -26,7 +26,7 @@
           port = 8080;
         };
         serial = {
-          port = "tcp://192.168.2.178:6638";
+          port = "/dev/ttyUSB0";
           baudrate = 115200;
           adapter = "zstack";
         };
