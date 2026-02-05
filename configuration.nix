@@ -34,6 +34,7 @@
 
   environment.systemPackages = with pkgs; [
     git
+    age
   ];
 
   services.openssh.enable = true;

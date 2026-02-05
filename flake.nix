@@ -5,18 +5,26 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     hardware.url = "github:nixos/nixos-hardware";
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  outputs = { self, nixpkgs, hardware, ... }@inputs: {
-    nixosConfigurations = {
-      "malina" = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./configuration.nix
-          hardware.nixosModules.raspberry-pi-3
+  outputs = { self, nixpkgs, hardware, sops-nix }: {
+    nixosConfigurations.malina = nixpkgs.lib.nixosSystem {
+      system = "aarch64-linux";
+      modules = [
+        ./configuration.nix
+         
+        hardware.nixosModules.raspberry-pi-3
 
-          ./home-assistant.nix
-        ];
-      };
+        sops-nix.nixosModules.sops
+
+        ./home-assistant.nix
+      ];      
     };
   };
 }
