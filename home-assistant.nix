@@ -10,9 +10,7 @@
     ];
     config = {
       default_config = {};
-      mqtt = {
-        server = "mqtt://localhost:1883";
-      };
+      automation = "!include automations.yaml";
     };
   };
 
