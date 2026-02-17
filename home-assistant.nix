@@ -7,6 +7,8 @@
       "met"
       "default_config"
       "mqtt"
+      "roborock"
+      "yeelight"
     ];
     config = {
       default_config = {};
