@@ -35,9 +35,14 @@
   environment.systemPackages = with pkgs; [
     git
     age
+    pam_ssh_agent_auth
   ];
 
   services.openssh.enable = true;
+
+  security.pam.services.sudo = {
+    sshAgentAuth = true;
+  };
 
   networking.firewall.allowedTCPPorts = [ 8080 8123 ];
   networking.firewall.allowedUDPPorts = [ 8080 ];
