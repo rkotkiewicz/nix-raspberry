@@ -40,8 +40,13 @@
 
   services.openssh.enable = true;
 
-  security.pam.services.sudo = {
-    sshAgentAuth = true;
+  security.pam = {
+    rssh = {
+      enable = true;
+      settings.auth_key_file = "/etc/ssh/authorized_keys.d/nixos";
+    };
+
+    services.sudo.rssh = true;
   };
 
   networking.firewall.allowedTCPPorts = [ 8080 8123 ];
