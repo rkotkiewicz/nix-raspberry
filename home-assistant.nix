@@ -9,6 +9,7 @@
       "mqtt"
       "roborock"
       "yeelight"
+      "xiaomi_miio"
     ];
     config = {
       default_config = {};
