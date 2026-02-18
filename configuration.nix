@@ -38,7 +38,12 @@
     pam_ssh_agent_auth
   ];
 
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+
+    settings.PasswordAuthentication = false;
+    settings.KbdInteractiveAuthentication = false;
+  };
 
   security.pam = {
     rssh = {
