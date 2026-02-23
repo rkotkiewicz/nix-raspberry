@@ -10,6 +10,7 @@
       "roborock"
       "yeelight"
       "xiaomi_miio"
+      "esphome"
     ];
     config = {
       default_config = {};
@@ -51,5 +52,12 @@
       enable = true;
       settings = {
       };
+    };
+
+    services.esphome = {
+      enable = true;
+      address = "0.0.0.0";
+      port = 6052;
+      openFirewall = true;
     };
 }
